@@ -10,17 +10,20 @@ class PagesController extends Controller
     //
 
     public function index(){
-
-        return view('index');
+        $title = 'Welcome To Laravel 8 !';
+        return view('index')->with('title',$title);
     }
 
     public function about(){
-
-        return view('pages.about');
+        $title = 'About Us';
+        return view('pages.about')->with('title',$title);
     }
 
     public function services(){
-
-        return view('pages.services');
+        $data = array(
+            'title' => 'Services',
+            'services' => ['Web Design', 'Programming', 'SEO']
+        );
+        return view('pages.services')->with($data);
     }
 }
