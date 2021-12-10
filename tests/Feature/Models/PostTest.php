@@ -19,4 +19,12 @@ class PostTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_post_all()
+    {
+        $response = $this->get('/post');
+
+        $response->assertStatus(200);
+    }
+
 }
