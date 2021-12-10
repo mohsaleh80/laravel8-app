@@ -14,7 +14,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::getAllPosts();
+        $title = 'Blog Page';
+
+        return view('pages.blog')->with('title',$title)
+                                 ->with('posts',$posts);
     }
 
     /**
