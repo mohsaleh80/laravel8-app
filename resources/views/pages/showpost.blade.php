@@ -1,8 +1,33 @@
 @extends('layouts.master')
 
 @section('assets')
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<!-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> -->
+  <style>
+     
+        .border_rounded {
+            border-radius: 20px 0px;
+            
+        }
+        .btnn:hover {
+            color: blue;
+            background-color: white;
+            border: 2px solid blue;
+        }
+
+        .hr{
+            border: 2px solid blue;
+            
+            
+        }
+        img {
+         float: right;
+         width: 50%;
+         margin: 0 0px 10px 20px;
+            }
+  </style>
 @endsection
+
+
 @section('content')
 
 <div class="container ">
@@ -10,13 +35,14 @@
         <br>
             <div class="container bg-light text-dark">
                 <br>
-                <li class="list-group-item active font_dec border_rounded "><strong>{{$post->title}}</strong></li>
+                <li class="list-group-item active  border_rounded "><strong>{{$post->title}}</strong></li>
                 <br/>
-                <p class=""> {{$post->body}}</p>    
-                <hr >
+                <p class=""><img src="{{asset('imgs/paris1.jpg')}}"> {{$post->body}}</p>    
+                <hr class="hr">
                 <span>created at {{$post->created_at}}</span>
-                <br/><br/>                
-                <a class="btn btn-primary btnn" href="/post" > back </a> 
+                <br/> <br/>              
+                <a class="btn btn-primary btnn" href="/post" > back </a>
+                <br/> <br/>
             </div> 
             <br/>
              
