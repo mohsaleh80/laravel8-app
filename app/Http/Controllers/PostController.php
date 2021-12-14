@@ -15,7 +15,8 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::getAllPosts();
-        $title = 'Blog Page';
+
+        $title = 'Blog';
 
         return view('pages.blog')->with('title',$title)
                                  ->with('posts',$posts);
@@ -48,9 +49,12 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(int $id)
     {
         //
+        $post =Post::find($id);
+        // return $post;
+       return view('pages.showpost')->with('post',$post);
     }
 
     /**

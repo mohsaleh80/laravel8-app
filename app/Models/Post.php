@@ -11,8 +11,8 @@ class Post extends Model
     
    public function getAllPosts(){
 
-        $posts=Post::all();
-        
+        //$posts=Post::all();
+        $posts=Post::paginate(2);
         return $posts;
    }
 }
