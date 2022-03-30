@@ -14,12 +14,28 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::getAllPosts();
+        //$posts = Post::getAllPosts();
+        //$posts=Post::all();
+         $posts=Post::paginate(2);
 
         $title = 'Blog';
 
         return view('pages.blog')->with('title',$title)
                                  ->with('posts',$posts);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function show(int $id)
+    {
+        //
+        $post =Post::find($id);
+        // return $post;
+       return view('pages.showpost')->with('post',$post);
     }
 
     /**
@@ -43,19 +59,7 @@ class PostController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function show(int $id)
-    {
-        //
-        $post =Post::find($id);
-        // return $post;
-       return view('pages.showpost')->with('post',$post);
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -63,9 +67,12 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(int $id)
     {
         //
+        $post =Post::find($id);
+        
+       return view('pages.showpost')->with('post',$post);
     }
 
     /**

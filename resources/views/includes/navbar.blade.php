@@ -48,12 +48,19 @@
                         <li><a class="nav-link active" href="/">Home</a></li>
                         <li><a class="nav-link active" href="/about">About</a></li>
                         <li><a class="nav-link active" href="/services">Services</a></li>
-                        <li><a class="nav-link active" href="/post">Blog</a></li>
-                        
+                        <li><a class="nav-link active" href="/post">Blog</a></li> 
                     </ul>
+
+                    
                     
                 </div>
+                <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+                    <ul class="navbar-nav ms-auto flex-nowrap">       
+                            <li><a class="nav-link active" href="/post/create">Create Post</a></li>     
+                    </ul>
+                </div>
             </div>
+            
         </div>
     </div>
   </nav>

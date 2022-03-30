@@ -29,4 +29,7 @@ Route::get('/', 'App\Http\Controllers\PagesController@index');
 Route::get('/about', 'App\Http\Controllers\PagesController@about');
 Route::get('/services', 'App\Http\Controllers\PagesController@services');
 
-Route::resource('post', 'App\Http\Controllers\PostController');
+//Route::resource('post', 'App\Http\Controllers\PostController');
+Route::get('/post', 'App\Http\Controllers\PostController@index');
+Route::get('/post/{id}', 'App\Http\Controllers\PostController@show');
+Route::get('/post/edit/{id}', 'App\Http\Controllers\PostController@edit');

@@ -1,7 +1,8 @@
 @extends('layouts.master')
 
 @section('assets')
-<!-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"> -->
+
+
   <style>
      
         .border_rounded {
@@ -25,6 +26,7 @@
          margin: 0 0px 10px 20px;
             }
   </style>
+
 @endsection
 
 
@@ -42,6 +44,8 @@
                 <span>created at {{$post->created_at}}</span>
                 <br/> <br/>              
                 <a class="btn btn-primary btnn" href="/post" > back </a>
+                <br/> <br/>              
+                <a class="btn btn-primary btnn" href="/post/edit/{{$post->id}}" > edit </a>
                 <br/> <br/>
             </div> 
             <br/>
